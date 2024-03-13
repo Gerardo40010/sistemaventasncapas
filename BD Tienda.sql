@@ -1,4 +1,4 @@
-CREATE DATABASE TIENDABD
+CREATE DATABASE BDTienda
 
 CREATE TABLE PERSONA (
 IDPERSONA INT IDENTITY (1,1) NOT NULL,
@@ -150,7 +150,7 @@ FOREIGN KEY (IDPRODUCTO) REFERENCES PRODUCTO (IDPRODUCTO),
 
 
 
-insert into persona values('Pedro' ,'Fernandez','+59172979377','5744158','pedro@gmail.com','Activo');
+insert into persona values('Pedrito' ,'Fernandez','+59172979377','5744158','pedro@gmail.com','Activo');
 insert into persona values('Adrián' ,'Pérez' ,'+59161234567' ,'1234567' ,'adrian@gmail.com','Activo');
 insert into persona values('Belén','González' ,'+59173456789' ,'87654321' ,'belen@gmail.com','Activo');
 insert into persona values('Ana' ,'Rodríguez' ,'+59169876543' ,'2345678' ,'ana@gmail.com','Inactivo');
