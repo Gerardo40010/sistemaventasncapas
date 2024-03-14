@@ -13,7 +13,7 @@ namespace SistemasVentas.DAL
 
 		public static string CONECTAR
 		{
-            get { return @"Data Source=(DESKTOP-H3MALBM\MSSQLSERVER01); Initial Catalog=BDTienda; Integrated Security=True; TrustServerCertificate=true;"; }
+            get { return @"Data Source=(Local); Initial Catalog=BDTienda; Integrated Security=True; TrustServerCertificate=true;"; }
             //get { return ConfigurationManager.ConnectionStrings["cadena"].ToString(); }
         }
 		public static DataSet EjecutarDataSet(string consulta)

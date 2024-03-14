@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SistemasVentas.DAL;
+using SistemaVentas.Modelos;
 namespace SistemasVentas.BSS
 {
     public class PersonaBss
@@ -13,6 +14,10 @@ namespace SistemasVentas.BSS
         public DataTable ListarPersonaBss()
         {
             return dal.ListarPersonasDal();
+        }
+        public void InsertarPersonasBss(Persona persona)
+        {
+            dal.InsertarPersonaDal(persona);
         }
     }
 }
