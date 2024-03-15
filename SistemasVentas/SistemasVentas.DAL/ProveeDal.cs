@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,16 @@ namespace SistemasVentas.DAL
             return Lista;
 
         }
+        public void InsertarProveeDal(Provee provee)
+        {
+            string consulta = "insert into provee values('" + provee.IdProducto + "'," +
+                                                           "'" + provee.IdProducto + "'," +
+                                                         "'" + provee.IdProveedor + "'," +
+                                                         "'" + provee.Fecha.ToString("yyyy-MM-dd") + "'," +
+                                                          "'" + provee.Precio + "')";
+           
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }

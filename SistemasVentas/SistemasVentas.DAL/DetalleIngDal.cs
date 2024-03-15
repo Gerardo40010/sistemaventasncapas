@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,6 +16,18 @@ namespace SistemasVentas.DAL
             DataTable Lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return Lista;
 
+        }
+        public void InsertarDetalleIngDal(DetalleIng detalleIng)
+        {
+            string consulta = "insert into detalleing values('" + detalleIng.IdIngreso + "'," +
+                                                             "'" + detalleIng.IdProducto + "'," +
+                                                        "'" + detalleIng.FechaVenc.ToString("yyyy-MM-dd") + "'," +
+                                                          "'" + detalleIng.Cantidad + "'," +
+                                                           "'" + detalleIng.PrecioCosto + "'," +
+                                                             "'" + detalleIng.PrecioVenta + "'," +
+                                                            "'" + detalleIng.Subtotal + "'," +
+                                                           "'Activo')";
+            conexion.Ejecutar(consulta);
         }
     }
 }

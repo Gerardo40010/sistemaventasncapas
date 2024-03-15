@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,14 @@ namespace SistemasVentas.DAL
             return Lista;
 
         }
+        public void InsertarUsuarioRolDal(UsuarioRol usuarioRol)
+        {
+            string consulta = "insert into usuariorol values('" + usuarioRol.IdUsuario + "'," +
+                                                           "'" + usuarioRol.IdRol + "'," +
+                                                      "'" + usuarioRol.FechaAsigna.ToString("yyyy-MM-dd") + "'," +
+                                                           "'Activo')";
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }

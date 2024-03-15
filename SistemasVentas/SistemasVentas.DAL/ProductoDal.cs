@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,17 @@ namespace SistemasVentas.DAL
             return Lista;
 
         }
+        public void InsertarProductoDal(Producto producto)
+        {
+            string consulta = "insert into producto values('" + producto.IdTipoProd + "'," +
+                                                           "'" + producto.IdMarca + "'," +
+                                                           "'" + producto.Nombre + "'," +
+                                                           "'" + producto.CodigoBarra + "'," +
+                                                           "'" + producto.Unidad + "'," +
+                                                           "'" + producto.Descripcion + "'," +
+                                                           "'Activo')";
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }

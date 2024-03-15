@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,12 @@ namespace SistemasVentas.DAL
             return Lista;
 
         }
+        public void InsertarTipoProdDal(TipoProd tipoProd)
+        {
+            string consulta = "insert into tipoprod values('" + tipoProd.Nombre + "'," +
+                                                           "'Activo')";
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }

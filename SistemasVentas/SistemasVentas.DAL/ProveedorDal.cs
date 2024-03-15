@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,6 +16,14 @@ namespace SistemasVentas.DAL
             DataTable Lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return Lista;
 
+        }
+        public void InsertarProveedorDal(Proveedor proveedor)
+        {
+            string consulta = "insert into proveedor values('" + proveedor.Nombre + "'," +                                                           
+                                                           "'" + proveedor.Telefono + "'," +
+                                                           "'" + proveedor.Direccion + "'," +
+                                                           "'Activo')";
+            conexion.Ejecutar(consulta);
         }
     }
 }
