@@ -1,3 +1,5 @@
+using SistemaVentas.Modelos;
+
 namespace SitemasVentas.VISTA
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace SitemasVentas.VISTA
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new RolVistas.RolInsertarVista());
+            Application.Run(new UsuarioVistas.UsuarioInsertarVistaa());
+           
         }
     }
 }

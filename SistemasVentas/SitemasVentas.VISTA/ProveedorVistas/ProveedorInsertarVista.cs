@@ -19,7 +19,7 @@ namespace SitemasVentas.VISTA.ProveedorVistas
         {
             InitializeComponent();
         }
-        ProveedorBss bss= new ProveedorBss();
+        ProveedorBss bss = new ProveedorBss();
         private void button1_Click(object sender, EventArgs e)
         {
             Proveedor p = new Proveedor();
