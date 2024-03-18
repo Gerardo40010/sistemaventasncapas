@@ -44,5 +44,20 @@ namespace SistemasVentas.DAL
             }
             return persona;
         }
+        public void EditarPersonaDal (Persona persona)
+        {
+            string consulta = "update persona set nombre='" + persona.Nombre + "'," +
+                                                        "apellido='" + persona.Apellido + "'," +
+                                                        "telefono='" + persona.Telefono + "'," +
+                                                        "ci='" + persona.CI + "'," +
+                                                        "correo='" + persona.Correo + "' " +
+                                                        "where idpersona=" + persona.IdPersona;
+            conexion.Ejecutar(consulta);
+        }
+        public void EliminarPersonaDal(int id)
+        {
+            string consulta = "delete from persona where idpersona=" + id;
+            conexion.Ejecutar(consulta);
+        }
     }
 }

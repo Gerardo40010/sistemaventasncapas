@@ -19,8 +19,8 @@ namespace SitemasVentas.VISTA.UsuarioVistas
         {
             InitializeComponent();
         }
-        public static int IdPersonaSeleccionada=0;
-        PersonaBss bss= new PersonaBss();
+        public static int IdPersonaSeleccionada = 0;
+        PersonaBss bss = new PersonaBss();
         private void button1_Click(object sender, EventArgs e)
         {
             PersonaListarVista fr = new PersonaListarVista();
@@ -30,6 +30,20 @@ namespace SitemasVentas.VISTA.UsuarioVistas
                 textBox1.Text = persona.Nombre + " " + persona.Apellido;
 
             }
+        }
+        UsuarioBss bssuser = new UsuarioBss();
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+                Usuario usuario = new Usuario();
+            usuario.IdPersona = IdPersonaSeleccionada;
+                usuario.NombreUser = textBox2.Text;
+                usuario.Contraseña = textBox3.Text;
+                usuario.FechaReg = dateTimePicker1.Value;
+            bssuser.InsertarUsuarioBss(usuario);
+                MessageBox.Show("Se guardó correctamente el usuario");
+            
+
         }
     }
 }

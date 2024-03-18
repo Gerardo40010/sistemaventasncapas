@@ -27,7 +27,7 @@ namespace SitemasVentas.VISTA.UsuarioVistas
             usuario.IdPersona = int.Parse(textBox1.Text);
             usuario.NombreUser = textBox2.Text;
             usuario.Contraseña = textBox3.Text;
-            usuario.FechaReg = DateTime.Now; 
+            usuario.FechaReg = DateTime.Now;
 
             bss.InsertarUsuarioBss(usuario);
             MessageBox.Show("Se guardó correctamente el usuario");

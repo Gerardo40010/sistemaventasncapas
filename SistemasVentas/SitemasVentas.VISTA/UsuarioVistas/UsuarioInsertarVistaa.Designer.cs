@@ -130,6 +130,7 @@
             button2.TabIndex = 23;
             button2.Text = "GUARDAR";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 

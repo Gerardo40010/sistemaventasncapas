@@ -20,11 +20,10 @@ namespace SistemasVentas.DAL
 
         public void InsertarUsuarioDal(Usuario usuario)
         {
-            string consulta = "insert into usuario values('" + usuario.IdPersona + "'," +
-                                                           "'" + usuario.IdPersona + "'," +
+            string consulta = "insert into usuario values(" + usuario.IdPersona + "," +
                                                           "'" + usuario.NombreUser + "'," +
                                                            "'" + usuario.Contraseña + "'," +
-                                                           "'" + usuario.FechaReg.ToString("yyyy-MM-dd") + "')";
+                                                "'" + usuario.FechaReg.ToString("yyyy-MM-dd") + "')";
 
             conexion.Ejecutar(consulta);
         }
