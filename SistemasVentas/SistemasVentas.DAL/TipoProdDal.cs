@@ -23,6 +23,33 @@ namespace SistemasVentas.DAL
                                                            "'Activo')";
             conexion.Ejecutar(consulta);
         }
+        public TipoProd ObtenerTipoProdId(int id)
+        {
+            string consulta = "SELECT * FROM tipoprod WHERE idTipoProd = " + id;
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "asdas");
+            TipoProd tipoProd = new TipoProd();
+            if (tabla.Rows.Count > 0)
+            {
+                tipoProd.IdTipoProd = Convert.ToInt32(tabla.Rows[0]["idTipoProd"]);
+                tipoProd.Nombre = tabla.Rows[0]["nombre"].ToString();
+                tipoProd.Estado = tabla.Rows[0]["estado"].ToString();
+            }
+            return tipoProd;
+        }
+
+        public void EditarTipoProdDal(TipoProd tipoProd)
+        {
+            string consulta = "UPDATE tipoprod SET nombre = '" + tipoProd.Nombre +
+                              "', estado = '" + tipoProd.Estado + "' " +
+                              "WHERE idTipoProd = " + tipoProd.IdTipoProd;
+            conexion.Ejecutar(consulta);
+        }
+
+        public void EliminarTipoProdDal(int id)
+        {
+            string consulta = "DELETE FROM tipoprod WHERE idTipoProd = " + id;
+            conexion.Ejecutar(consulta);
+        }
 
     }
 }

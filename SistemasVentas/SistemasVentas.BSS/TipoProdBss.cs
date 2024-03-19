@@ -20,6 +20,19 @@ namespace SistemasVentas.BSS
         {
             dal.InsertarTipoProdDal(tipoProd);
         }
+        public TipoProd ObtenerTipoProdId(int id)
+        {
+            return dal.ObtenerTipoProdId(id);
+        }
 
+        public void EditarTipoProdBss(TipoProd tipoProd)
+        {
+            dal.EditarTipoProdDal(tipoProd);
+        }
+
+        public void EliminarTipoProdBss(int id)
+        {
+            dal.EliminarTipoProdDal(id);
+        }
     }
 }

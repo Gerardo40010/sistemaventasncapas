@@ -35,13 +35,14 @@ namespace SitemasVentas.VISTA.PersonasVistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = p.Nombre;
-            textBox2.Text = p.Apellido;
-            textBox3.Text = p.Telefono;
-            textBox4.Text = p.CI;
-            textBox5.Text = p.Correo;
+            p.Nombre = textBox1.Text;
+            p.Apellido = textBox2.Text;
+            p.Telefono = textBox3.Text;
+            p.CI = textBox4.Text;
+            p.Correo = textBox5.Text;
+
             bss.EditarPersonaBss(p);
-            MessageBox.Show("Se guardo correctamente");
+            MessageBox.Show("Datos actulizados");
         }
     }
 }

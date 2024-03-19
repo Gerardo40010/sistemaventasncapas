@@ -27,6 +27,38 @@ namespace SistemasVentas.DAL
            
             conexion.Ejecutar(consulta);
         }
+        public Provee ObtenerProveeId(int id)
+        {
+            string consulta = "SELECT * FROM provee WHERE idProvee = " + id;
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "asdas");
+            Provee provee = new Provee();
+            if (tabla.Rows.Count > 0)
+            {
+                provee.IdProvee = Convert.ToInt32(tabla.Rows[0]["idProvee"]);
+                provee.IdProducto = Convert.ToInt32(tabla.Rows[0]["idProducto"]);
+                provee.IdProveedor = Convert.ToInt32(tabla.Rows[0]["idProveedor"]);
+                provee.Fecha = Convert.ToDateTime(tabla.Rows[0]["fecha"]);
+                provee.Precio = Convert.ToDecimal(tabla.Rows[0]["precio"]);
+            }
+            return provee;
+        }
+
+        public void EditarProveeDal(Provee provee)
+        {
+            string consulta = "UPDATE provee SET idProducto = " + provee.IdProducto +
+                              ", idProveedor = " + provee.IdProveedor +
+                              ", fecha = '" + provee.Fecha.ToString("yyyy-MM-dd") +
+                              "', precio = " + provee.Precio +
+                              " WHERE idProvee = " + provee.IdProvee;
+            conexion.Ejecutar(consulta);
+        }
+
+        public void EliminarProveeDal(int id)
+        {
+            string consulta = "DELETE FROM provee WHERE idProvee = " + id;
+            conexion.Ejecutar(consulta);
+        }
+
 
     }
 }

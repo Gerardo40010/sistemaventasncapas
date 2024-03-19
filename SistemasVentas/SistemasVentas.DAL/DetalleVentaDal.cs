@@ -27,5 +27,40 @@ namespace SistemasVentas.DAL
                                                           "'Exitoso')";
             conexion.Ejecutar(consulta);
         }
+        public DetalleVenta ObtenerDetalleVentaId(int id)
+        {
+            string consulta = "SELECT * FROM detalleventa WHERE idDetalleVenta = " + id;
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "asdas");
+            DetalleVenta detalleVenta = new DetalleVenta();
+            if (tabla.Rows.Count > 0)
+            {
+                detalleVenta.IdDetalleVenta = Convert.ToInt32(tabla.Rows[0]["idDetalleVenta"]);
+                detalleVenta.IdVenta = Convert.ToInt32(tabla.Rows[0]["idVenta"]);
+                detalleVenta.IdProducto = Convert.ToInt32(tabla.Rows[0]["idProducto"]);
+                detalleVenta.Cantidad = Convert.ToInt32(tabla.Rows[0]["cantidad"]);
+                detalleVenta.PrecioVenta = Convert.ToDecimal(tabla.Rows[0]["precioVenta"]);
+                detalleVenta.Subtotal = Convert.ToDecimal(tabla.Rows[0]["subtotal"]);
+                detalleVenta.Estado = tabla.Rows[0]["estado"].ToString();
+            }
+            return detalleVenta;
+        }
+
+        public void EditarDetalleVentaDal(DetalleVenta detalleVenta)
+        {
+            string consulta = "UPDATE detalleventa SET idVenta = " + detalleVenta.IdVenta +
+                              ", idProducto = " + detalleVenta.IdProducto +
+                              ", cantidad = " + detalleVenta.Cantidad +
+                              ", precioVent = " + detalleVenta.PrecioVenta +
+                              ", subtotal = " + detalleVenta.Subtotal +
+                              "WHERE idDetalleVenta = " + detalleVenta.IdDetalleVenta;
+            conexion.Ejecutar(consulta);
+        }
+
+        public void EliminarDetalleVentaDal(int id)
+        {
+            string consulta = "DELETE FROM detalleventa WHERE idDetalleVenta = " + id;
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }
