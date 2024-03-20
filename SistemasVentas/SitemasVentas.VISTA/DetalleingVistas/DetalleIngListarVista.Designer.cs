@@ -107,6 +107,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DetalleIngListarVista";
             this.Text = "DetalleIngListarVista";
+            this.Load += new System.EventHandler(this.DetalleIngListarVista_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

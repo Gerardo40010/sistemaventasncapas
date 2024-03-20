@@ -50,7 +50,7 @@ namespace SistemasVentas.DAL
             string consulta = "UPDATE detalleventa SET idVenta = " + detalleVenta.IdVenta +
                               ", idProducto = " + detalleVenta.IdProducto +
                               ", cantidad = " + detalleVenta.Cantidad +
-                              ", precioVent = " + detalleVenta.PrecioVenta +
+                              ", precioVenta = " + detalleVenta.PrecioVenta +
                               ", subtotal = " + detalleVenta.Subtotal +
                               "WHERE idDetalleVenta = " + detalleVenta.IdDetalleVenta;
             conexion.Ejecutar(consulta);

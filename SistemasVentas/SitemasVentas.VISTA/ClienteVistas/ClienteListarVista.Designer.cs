@@ -59,6 +59,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "ELIMINAR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button3
             // 
@@ -69,6 +70,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "EDITAR";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
@@ -79,6 +81,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "AGREGAR";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -104,6 +107,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClienteListarVista";
             this.Text = "ClienteListarVista";
+            this.Load += new System.EventHandler(this.ClienteListarVista_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

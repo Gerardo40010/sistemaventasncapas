@@ -1,5 +1,6 @@
 ﻿using SistemasVentas.BSS;
 using SistemaVentas.Modelos;
+using SitemasVentas.VISTA.PersonasVistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,17 @@ namespace SitemasVentas.VISTA.DetalleingVistas
 
             bss.InsertarDetalleIngBss(detalleIng);
             MessageBox.Show("Se guardó correctamente el detalle de ingreso");
+        }
+        public static int idDetalleIngSeleccionado ;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DetalleIngListarVista fr = new DetalleIngListarVista();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                DetalleIng detalleIng = bss.ObtenerDetalleIngId(idDetalleIngSeleccionado);
+                textBox1.Text = detalleIng.IdDetalleIng.ToString();
+
+            }
         }
     }
 }

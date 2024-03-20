@@ -44,5 +44,27 @@ namespace SitemasVentas.VISTA.PersonasVistas
             bss.EditarPersonaBss(p);
             MessageBox.Show("Datos actulizados");
         }
+
+        private void PersonaEditarVista_Load_1(object sender, EventArgs e)
+        {
+            p = bss.ObtenerIdBss(idx);
+            textBox1.Text = p.Nombre;
+            textBox2.Text = p.Apellido;
+            textBox3.Text = p.Telefono;
+            textBox4.Text = p.CI;
+            textBox5.Text = p.Correo;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            p.Nombre = textBox1.Text;
+            p.Apellido = textBox2.Text;
+            p.Telefono = textBox3.Text;
+            p.CI = textBox4.Text;
+            p.Correo = textBox5.Text;
+
+            bss.EditarPersonaBss(p);
+            MessageBox.Show("Datos actulizados");
+        }
     }
 }

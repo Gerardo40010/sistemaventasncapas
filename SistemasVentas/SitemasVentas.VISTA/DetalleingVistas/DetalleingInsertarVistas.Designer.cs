@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -159,11 +160,22 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(188, 27);
             this.dateTimePicker1.TabIndex = 15;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(417, 135);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 29);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "SELECCIONAR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // DetalleingInsertarVistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 336);
+            this.ClientSize = new System.Drawing.Size(571, 336);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -201,5 +213,6 @@
         private Button button1;
         private Button button2;
         private DateTimePicker dateTimePicker1;
+        private Button button3;
     }
 }

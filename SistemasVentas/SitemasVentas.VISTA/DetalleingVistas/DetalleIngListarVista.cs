@@ -21,7 +21,7 @@ namespace SitemasVentas.VISTA.DetalleingVistas
         DetalleIngBss bss = new DetalleIngBss();
         private void DetalleIngListarVista_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bss.ListarDetalleIngBss();
+          //  dataGridView1.DataSource = bss.ListarDetalleIngBss();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,11 +35,19 @@ namespace SitemasVentas.VISTA.DetalleingVistas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int idDetalleIngSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdDetalleIng"].Value);
-            DetalleignEditarVistas fr = new DetalleignEditarVistas(idDetalleIngSeleccionado);
-            if (fr.ShowDialog() == DialogResult.OK)
+            if (dataGridView1.CurrentRow != null)
             {
-                dataGridView1.DataSource = bss.ListarDetalleIngBss();
+                int idDetalleIngSeleccionado = (int)dataGridView1.CurrentRow.Cells["IdDetalleIng"].Value;
+
+                // Crear una instancia del formulario DetalleignEditarVistas
+                DetalleignEditarVistas frmEditarDetalleIng = new DetalleignEditarVistas(idDetalleIngSeleccionado);
+
+                // Mostrar el formulario para editar el detalle de ingreso
+                frmEditarDetalleIng.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay una fila seleccionada.");
             }
         }
 
@@ -52,6 +60,11 @@ namespace SitemasVentas.VISTA.DetalleingVistas
                 bss.EliminarDetalleIngBss(idDetalleIngSeleccionado);
                 dataGridView1.DataSource = bss.ListarDetalleIngBss();
             }
+        }
+
+        private void DetalleIngListarVista_Load_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = bss.ListarDetalleIngBss();
         }
     }
 }
